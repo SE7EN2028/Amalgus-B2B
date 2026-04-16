@@ -63,7 +63,7 @@ export default function Home() {
             <div className="bg-blue-600 p-2 rounded-lg">
               <Layers className="text-white h-6 w-6" />
             </div>
-            <h1 className="text-xl font-bold tracking-tight">AmalGus<span className="text-blue-600 dark:text-blue-400">Glass</span></h1>
+            <h1 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">AmalGus</h1>
           </div>
           <nav className="hidden md:flex space-x-8 text-sm font-medium text-slate-600 dark:text-slate-300">
             <a href="#" className="hover:text-blue-600 transition-colors">Marketplace</a>
@@ -136,6 +136,34 @@ export default function Home() {
         {error && (
           <div className="bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 p-4 rounded-xl border border-red-200 dark:border-red-800/30 max-w-2xl mx-auto mb-8 text-center">
             {error}
+          </div>
+        )}
+        {isLoading && (
+          <div className="space-y-6 animate-pulse">
+              <div className="flex flex-col space-y-1">
+                <div className="flex items-center space-x-2">
+                  <Sparkles className="w-5 h-5 text-blue-500 animate-spin" />
+                  <span className="text-lg font-bold text-slate-700 dark:text-slate-300">Finding best matches...</span>
+                </div>
+                <p className="text-xs text-slate-500 dark:text-slate-400">
+                  <span className="font-semibold text-blue-600 dark:text-blue-400">Note:</span> This is a trial version using free-tier AI, so processing may take a moment. The production version will be near-instant.
+                </p>
+              </div>
+            {[1, 2, 3].map(i => (
+              <div key={i} className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800">
+                <div className="flex justify-between mb-4">
+                  <div className="space-y-2 flex-1">
+                    <div className="h-4 bg-slate-200 dark:bg-slate-700 rounded w-24" />
+                    <div className="h-6 bg-slate-200 dark:bg-slate-700 rounded w-64" />
+                    <div className="h-3 bg-slate-200 dark:bg-slate-700 rounded w-40" />
+                  </div>
+                  <div className="h-8 w-20 bg-blue-100 dark:bg-blue-900/30 rounded-bl-2xl" />
+                </div>
+                <div className="h-16 bg-blue-50 dark:bg-blue-900/10 rounded-xl mb-4" />
+                <div className="h-3 bg-slate-200 dark:bg-slate-700 rounded w-full mb-2" />
+                <div className="h-3 bg-slate-200 dark:bg-slate-700 rounded w-3/4" />
+              </div>
+            ))}
           </div>
         )}
 
