@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Search, Sparkles, Loader2, Package, Layers, CheckCircle2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 
 // Types
 import { Product } from '@/data/products';
@@ -66,8 +67,8 @@ export default function Home() {
             <h1 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">AmalGus</h1>
           </div>
           <nav className="hidden md:flex space-x-8 text-sm font-medium text-slate-600 dark:text-slate-300">
-            <a href="#" className="hover:text-blue-600 transition-colors">Marketplace</a>
-            <a href="#" className="hover:text-blue-600 transition-colors">Suppliers</a>
+            <Link href="/marketplace" className="hover:text-blue-600 transition-colors">Marketplace</Link>
+            <Link href="/marketplace" className="hover:text-blue-600 transition-colors">Suppliers</Link>
             <a href="#" className="hover:text-blue-600 transition-colors">Projects</a>
           </nav>
         </div>
